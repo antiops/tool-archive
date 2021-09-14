@@ -91,7 +91,7 @@ def __profiles(profile, addHEVCDO=False):
 		]	
 	else:
 		profiles += [
-			"playready-h264mpl30-dash",
+			"playready-h264bpl30-dash",
 		]
 
 	return profiles
