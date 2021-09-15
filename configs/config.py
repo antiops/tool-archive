@@ -34,7 +34,7 @@ MUXER = {
 	"DEFAULT": False,  # to use the normal renaming. EX: Stranger Things S01E01 [1080p].mkv
 	"AUDIO": "hin",  # default audio language.
 	"SUB": "None",  # default subtitle language. EX: "eng" or "spa"
-	"GROUP": "Tandav",  # to change the group name!. it's also possible to use this "--gr LOL", on the ripping commands.
+	"GROUP": "YOURGROUP",  # to change the group name!. it's also possible to use this "--gr LOL", on the ripping commands.
 	"noTitle": False,  # this will remove titles from the episodes EX: (The Witcher S01E01). insstead of (The Witcher S01E01 The End's Beginning).
 	"scheme": "p2p",  # add/change any needed scheme naming. it's also possible to use this "--muxscheme repack", on the ripping commands.
 	"schemeslist": {
@@ -48,7 +48,7 @@ MUXER = {
 #####################################(PATHS)#####################################
 
 PATHS = {
-	"DL_FOLDER": "E:/#rips", #
+	"DL_FOLDER": f"{dirPath}", #
 	"DIR_PATH": f"{dirPath}",
 	"BINARY_PATH": f"{dirPath}/bin",
 	"COOKIES_PATH": f"{dirPath}/configs/Cookies",
