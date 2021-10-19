@@ -169,42 +169,44 @@ class aria2:
         enable_color=True,
         concurrent_downloads=5,
         header="skip",
-        user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36",
+        user_agent="",
         uri_selector="inorder",
         console_log_level="skip",
         download_result="hide",
         quiet="false",
         extra_commands=[],
 
-        # 单服务器最大连接线程数
+        # Jared_mod settings
         connection=64,
-        # 单任务最大连接线程数
         split=64,
-        # 代理地址，根据需要修改
-        http_proxy_aria2c="http://127.0.0.1:7890",
-        https_proxy_aria2c="http://127.0.0.1:7890",
-        # 保存会话进度，用于断点续传
+        http_proxy_aria2c="",
+        https_proxy_aria2c="",
         save_session_interval=1,
         auto_save_interval=30,
         force_save="false",
-        # 文件最小分段大小
         min_split_size="4M",
-        # 磁盘缓存
         max_tries="0",
-        # HTTP/FTP下载分片大小
         piece_length="1M",
-        # 下载进度摘要输出间隔时间
         summary_interval=0,
-        # 断点续传
         continue_aria2c="true",
-        # 文件预分配方式 可选：none, prealloc, trunc, falloc
-        # 机械硬盘：falloc
-        # 固态硬盘：none
-        # prealloc 分配速度慢, trunc 无实际作用，不推荐使用。
         file_allocation="none",
-        # 磁盘缓存
         disk_cache="64M",
     ):
+
+        if self.config["enable_pass_config_to_aria2c"]:
+            file_allocation = self.config["file_allocation"]
+            http_proxy_aria2c = self.config["http_proxy_aria2c"]
+            https_proxy_aria2c = self.config["https_proxy_aria2c"]
+            user_agent = self.config["user_agent"]
+            connection = self.config["connection"]
+            split = self.config["split"]
+            summary_interval = self.config["summary_interval"]
+            continue_aria2c = self.config["continue_aria2c"]
+            max_tries = self.config["max_tries"]
+            piece_length = self.config["piece_length"]
+            min_split_size = self.config["min_split_size"]
+            disk_cache = self.config["disk_cache"]
+        else: pass
 
         options = [] + extra_commands
         allow_overwrite = self.convert_args(allow_overwrite)

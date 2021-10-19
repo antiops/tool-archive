@@ -322,8 +322,6 @@ class netflix:
 			auto_file_renaming=False,
 			async_dns="skip",
 			retry_wait=5,
-			summary_interval=0,
-			concurrent_downloads=5,
 			uri_selector="inorder",
 			console_log_level="warn",
 			download_result="hide",

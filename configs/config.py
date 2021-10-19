@@ -34,11 +34,11 @@ MUXER = {
 	"DEFAULT": False,  # to use the normal renaming. EX: Stranger Things S01E01 [1080p].mkv
 	"AUDIO": "hin",  # default audio language.
 	"SUB": "None",  # default subtitle language. EX: "eng" or "spa"
-	"GROUP": "YOURGROUP",  # to change the group name!. it's also possible to use this "--gr LOL", on the ripping commands.
-	"noTitle": False,  # this will remove titles from the episodes EX: (The Witcher S01E01). insstead of (The Witcher S01E01 The End's Beginning).
+	"GROUP": "TJUPT",  # to change the group name!. it's also possible to use this "--gr LOL", on the ripping commands.
+	"noTitle": True,  # this will remove titles from the episodes EX: (The Witcher S01E01). insstead of (The Witcher S01E01 The End's Beginning).
 	"scheme": "p2p",  # add/change any needed scheme naming. it's also possible to use this "--muxscheme repack", on the ripping commands.
 	"schemeslist": {
-		"p2p": "{t}.{r}.{s}.WEB-DL.{ac}.{vc}-{gr}",
+		"p2p": "{t}.{r}.{s}.WEB-DL.{vc}.{ac}-{gr}",
 		"test": "{t}.{r}.{s}.WEB-DL-{gr}",
 	},
 	"EXTRAS": [],  # extra mkvmerge.exe commands.
@@ -60,6 +60,19 @@ PATHS = {
 
 ARIA2C = {
 	"enable_logging": False,  # True
+	"enable_pass_config_to_aria2c": True, #传递aria2c参数
+	"file_allocation": "none", # 文件预分配方式：机械硬盘 falloc，固态硬盘 none
+	"http_proxy_aria2c": "http://127.0.0.1:7890", # 代理地址，根据需要修改
+    "https_proxy_aria2c": "http://127.0.0.1:7890",
+	"user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36",
+	"connection": "64", # 单服务器最大连接线程数
+	"split": "64", # 单任务最大连接线程数
+	"summary_interval": "0", # 下载进度摘要输出间隔时间
+	"continue_aria2c": "true", # 断点续传
+	"max_tries": "0", # 最大尝试次数，0 表示无限
+	"piece_length": "1M", # HTTP/FTP下载分片大小
+	"min_split_size": "4M", # 文件最小分段大小，理论上值越小下载速度越快
+	"disk_cache": "64M", # 磁盘缓存，提升读写性能，有足够内存情况下增加
 }
 
 SETTINGS = {
@@ -67,7 +80,7 @@ SETTINGS = {
 }
 
 #####################################(VPN)#####################################
-
+# 不要修改这部分
 VPN = {
 	"proxies": None, # "http://151.253.165.70:8080",
 	"nordvpn": {
@@ -78,7 +91,7 @@ VPN = {
 	},
 	"private": {
 		"port": "8080",
-		"email": "abdalhmohmd8@gmail.com",  
+		"email": "xxx",  
 		"passwd": "123456", 
 		"http": "http://{email}:{passwd}@{ip}:{port}",
 	},
@@ -105,8 +118,8 @@ Config["NETFLIX"] = {
 	"cookies_txt": f"{dirPath}/configs/Cookies/cookies.txt",
 	"keys_file": f"{dirPath}/configs/KEYS/netflix.keys",
 	"token_file": f"{dirPath}/configs/Tokens/netflix_token.json",
-	"email": "Cfklop@max07.club",
-	"password": "1111",
+	"email": "xxxxxx@gmail.com",
+	"password": "123123",
 	"manifest_language": "en-US",
 	"metada_language": "en",
 	"manifestEsn": "NFCDIE-03-{}".format(utils().random_hex(30)),
