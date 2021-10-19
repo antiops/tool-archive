@@ -19,14 +19,12 @@ def MSLprofiles():
 				"playready-h264mpl31-dash",
 			],
 			"FHD": [
-				"playready-h264bpl30-dash",
 				"playready-h264mpl22-dash",
 				"playready-h264mpl30-dash",
 				"playready-h264mpl31-dash",
 				"playready-h264mpl40-dash",
 			],
 			"ALL": [
-				"playready-h264bpl30-dash",
 				"playready-h264mpl22-dash",
 				"playready-h264mpl30-dash",
 				"playready-h264mpl31-dash",
@@ -366,6 +364,7 @@ class get_manifest:
 		return VideoList
 
 	def ParseVideo(self, resp, getHigh):
+
 		manifest = resp["result"]
 		VideoList = []
 		checkerinfo = ""
@@ -410,20 +409,29 @@ class get_manifest:
 		if getHigh:
 			HighVideoList = self.HighVideoMSL()
 			if not HighVideoList == []:
-				checkerinfo = "\nNetflix Profile Checker v1.0\nMAIN: {}kbps | {}\nHIGH: {}kbps | {}\n\n{}\n"
+				# 判断high或main，要求main比high的vamf更大的情况下选择main
+				# main和high的vamf相同时选择high
+				if int(dict(VideoList[-1])["vmaf"]) >= int(dict(HighVideoList[-1])["vmaf"]) and int(dict(VideoList[-1])["Bitrate"]) >= int(dict(HighVideoList[-1])["Bitrate"]):
+					check_high_or_main = "MAIN"
+				else: check_high_or_main = "HIGH"
+				
+				checkerinfo = "\nNetflix Profile Checker v1.1\n2021-10-19 Jared_mod\n\nMain Rate: {}kbps | Vamf: {} | Profile: {}\nHigh Rate: {}kbps | Vamf: {} | Profile: {}\n\nResult: {} is Better!\n"
 				checkerinfo = checkerinfo.format(
 					str(dict(VideoList[-1])["Bitrate"]),
+					str(dict(VideoList[-1])["vmaf"]),
 					str(dict(VideoList[-1])["Profile"]),
 					str(dict(HighVideoList[-1])["Bitrate"]),
+					str(dict(HighVideoList[-1])["vmaf"]),
 					str(dict(HighVideoList[-1])["Profile"]),
-					"result: MAIN is Better"
-					if int(dict(VideoList[-1])["Bitrate"])
-					>= int(dict(HighVideoList[-1])["Bitrate"])
-					else "result: HIGH is Better",
+					check_high_or_main,
 				)
-
-				VideoList += HighVideoList
 				self.logger.debug("HighVideoList: {}".format(HighVideoList))
+
+				if check_high_or_main == "MAIN":
+					# 合并main和high解析列表
+					VideoList += HighVideoList
+				elif check_high_or_main == "HIGH":
+					VideoList = HighVideoList
 
 		VideoList = sorted(VideoList, key=lambda k: int(k["Bitrate"]))
 

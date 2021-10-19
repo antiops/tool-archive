@@ -299,7 +299,10 @@ class netflix:
 
 	def downloadFile2(self, url, file_name):
 		with open(file_name, "wb") as f:
-			response = requests.get(url, stream=True)
+			#避免ssl错误卡死，关闭requests模块ssl证书验证：verify=False
+			#关闭后，控制台持续输出警告，建议开启证书验证，取消注释下行代码可以屏蔽
+			#requests.packages.urllib3.diable_warnings()
+			response = requests.get(url, stream=True, verify=False)
 			#response.encoding = 'UTF-8'
 			f.write(response.content)
 
@@ -320,10 +323,7 @@ class netflix:
 			async_dns="skip",
 			retry_wait=5,
 			summary_interval=0,
-			enable_color=True,
-			connection=16,
-			concurrent_downloads=16,
-			split=16,
+			concurrent_downloads=5,
 			uri_selector="inorder",
 			console_log_level="warn",
 			download_result="hide",
@@ -389,17 +389,19 @@ class netflix:
 		return "DDP5.1"
 
 	def RemuxVideo(self, outputVideoTemp, outputVideo, Name):
-		self.logger.info("\nRemuxing video...")
-		ff = ffmpy.FFmpeg(
-			executable=self.bin["ffmpeg"],
-			inputs={outputVideoTemp: None},
-			outputs={outputVideo: "-c copy"},
-			global_options="-y -hide_banner -loglevel warning",
-		)
-
-		ff.run()
-		time.sleep(50.0 / 1000.0)
-		os.remove(outputVideoTemp)
+		#self.logger.info("\nRemuxing video...")
+		#ff = ffmpy.FFmpeg(
+		#	executable=self.bin["ffmpeg"],
+		#	inputs={outputVideoTemp: None},
+		#	outputs={outputVideo: "-c copy"},
+		#	global_options="-y -hide_banner -loglevel warning",
+		#)
+		#ff.run()
+		#time.sleep(50.0 / 1000.0)
+		#os.remove(outputVideoTemp)
+		
+		#解密视频文件直接重命名，移除ffmpeg混流过程
+		os.rename(outputVideoTemp, outputVideo)
 		self.logger.info("Done!")
 		return True
 
@@ -461,6 +463,7 @@ class netflix:
 		if not only1key == []:
 			KEYS = only1key
 
+		# 未解密视频传递ripprocess模块解密
 		self.ripprocess.mp4_decrypt(
 			encrypted=inputVideo,
 			decrypted=outputVideoTemp,
@@ -470,18 +473,21 @@ class netflix:
 			silent=silent,
 		)
 
-		if not "NETFLIX".lower() in list(
-			map(lambda x: x.lower(), self.video_settings["skip_video_demux"])
-		):
-			self.ripprocess.DemuxVideo(
-				outputVideoTemp=outputVideoTemp,
-				outputVideo=outputVideo,
-				ffmpeg=True,
-				mp4box=False,
-			)
-		else:
-			os.rename(outputVideoTemp, outputVideo)
-
+		#不理解这个模块的判断逻辑，操作是把解密的视频，传入ffmpeg重新封装
+		#if not "NETFLIX".lower() in list(
+		#	map(lambda x: x.lower(), self.video_settings["skip_video_demux"])
+		#):
+		#	self.ripprocess.DemuxVideo(
+		#		outputVideoTemp=outputVideoTemp,
+		#		outputVideo=outputVideo,
+		#		ffmpeg=True,
+		#		mp4box=False,
+		#	)
+		#else:
+		#	os.rename(outputVideoTemp, outputVideo)
+		
+		#移除判断，解密后视频文件直接重命名
+		os.rename(outputVideoTemp, outputVideo)
 		return True
 
 	def SubtitleThreader(self, subtitlesList, name):

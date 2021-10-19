@@ -386,6 +386,10 @@ class ripprocess(object):
             return "Mandarin Chinese (Simplified)", "zh-Hans"
         elif code == "cmn-Hant":
             return "Mandarin Chinese (Traditional)", "zh-Hant"
+        elif code == "zh-TW":
+            return "Chinese", "zho"
+        elif code == "zh-CN":
+            return "Chinese", "zho"
         elif code == "es-419":
             return "Spanish", "spa"
         elif code == "es-ES":
@@ -674,16 +678,18 @@ class ripprocess(object):
 
             outputName = inputName.replace(replace_str, ext)
             self.logger.info(("{} -> {}").format(inputName, outputName))
-            ff = ffmpy.FFmpeg(
-                executable=self.bin["ffmpeg"],
-                inputs={inputName: None},
-                outputs={outputName: "-c:a copy"},
-                global_options="-vn -sn -y -hide_banner -loglevel panic",
-            )
-            ff.run()
-            time.sleep(0.05)
-            if os.path.isfile(outputName) and os.path.getsize(outputName) > 1024 * 1024:
-                os.remove(inputName)
+            #直接重命名到目标格式，移除ffmpeg混流过程
+            os.rename(inputName, outputName)
+            #ff = ffmpy.FFmpeg(
+            #    executable=self.bin["ffmpeg"],
+            #    inputs={inputName: None},
+            #    outputs={outputName: "-c:a copy"},
+            #    global_options="-vn -sn -y -hide_banner -loglevel panic",
+            #)
+            #ff.run()
+            #time.sleep(0.05)
+            #if os.path.isfile(outputName) and os.path.getsize(outputName) > 1024 * 1024:
+            #    os.remove(inputName)
             self.logger.info("Done!")
 
         return

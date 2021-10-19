@@ -163,15 +163,11 @@ class aria2:
     def aria2Options(
         self,
         allow_overwrite=True,
-        file_allocation=None,
         auto_file_renaming=False,
         async_dns=False,
         retry_wait=5,
-        summary_interval=0,
-        enable_color=False,
-        connection=16,
-        concurrent_downloads=16,
-        split=16,
+        enable_color=True,
+        concurrent_downloads=5,
         header="skip",
         user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36",
         uri_selector="inorder",
@@ -179,50 +175,105 @@ class aria2:
         download_result="hide",
         quiet="false",
         extra_commands=[],
+
+        # 单服务器最大连接线程数
+        connection=64,
+        # 单任务最大连接线程数
+        split=64,
+        # 代理地址，根据需要修改
+        http_proxy_aria2c="http://127.0.0.1:7890",
+        https_proxy_aria2c="http://127.0.0.1:7890",
+        # 保存会话进度，用于断点续传
+        save_session_interval=1,
+        auto_save_interval=30,
+        force_save="false",
+        # 文件最小分段大小
+        min_split_size="4M",
+        # 磁盘缓存
+        max_tries="0",
+        # HTTP/FTP下载分片大小
+        piece_length="1M",
+        # 下载进度摘要输出间隔时间
+        summary_interval=0,
+        # 断点续传
+        continue_aria2c="true",
+        # 文件预分配方式 可选：none, prealloc, trunc, falloc
+        # 机械硬盘：falloc
+        # 固态硬盘：none
+        # prealloc 分配速度慢, trunc 无实际作用，不推荐使用。
+        file_allocation="none",
+        # 磁盘缓存
+        disk_cache="64M",
     ):
 
         options = [] + extra_commands
         allow_overwrite = self.convert_args(allow_overwrite)
         quiet = self.convert_args(quiet)
-        file_allocation = self.convert_args(file_allocation)
         auto_file_renaming = self.convert_args(auto_file_renaming)
         async_dns = self.convert_args(async_dns)
         retry_wait = self.convert_args(retry_wait)
         enable_color = self.convert_args(enable_color)
-        connection = self.convert_args(connection)
         concurrent_downloads = self.convert_args(concurrent_downloads)
-        split = self.convert_args(split)
         header = self.convert_args(header)
+        user_agent = self.convert_args(user_agent)
         uri_selector = self.convert_args(uri_selector)
         console_log_level = self.convert_args(console_log_level)
         download_result = self.convert_args(download_result)
+
+        connection = self.convert_args(connection)
+        split = self.convert_args(split)
+        http_proxy_aria2c = self.convert_args(http_proxy_aria2c)
+        https_proxy_aria2c = self.convert_args(https_proxy_aria2c)
+        save_session_interval = self.convert_args(save_session_interval)
+        auto_save_interval = self.convert_args(auto_save_interval)
+        force_save = self.convert_args(force_save)
+        min_split_size = self.convert_args(min_split_size)
+        max_tries = self.convert_args(max_tries)
+        piece_length = self.convert_args(piece_length)
+        summary_interval = self.convert_args(summary_interval)
+        continue_aria2c = self.convert_args(continue_aria2c)
+        file_allocation = self.convert_args(file_allocation)
+        disk_cache = self.convert_args(disk_cache)
 
         ##############################################################################
 
         options += self.append_commands(options, "--allow-overwrite=", allow_overwrite)
         options += self.append_commands(options, "--quiet=", quiet)
-        options += self.append_commands(options, "--file-allocation=", file_allocation)
+
         options += self.append_commands(
             options, "--auto-file-renaming=", auto_file_renaming
         )
         options += self.append_commands(options, "--async-dns=", async_dns)
         options += self.append_commands(options, "--retry-wait=", retry_wait)
         options += self.append_commands(options, "--enable-color=", enable_color)
-
-        options += self.append_commands(
-            options, "--max-connection-per-server=", connection
-        )
-
         options += self.append_commands(
             options, "--max-concurrent-downloads=", concurrent_downloads
         )
-        options += self.append_commands(options, "--split=", split)
+
         options += self.append_commands(options, "--header=", header)
+        options += self.append_commands(options, "--user-agent=", user_agent)
         options += self.append_commands(options, "--uri-selector=", uri_selector)
         options += self.append_commands(
             options, "--console-log-level=", console_log_level
         )
         options += self.append_commands(options, "--download-result=", download_result)
+
+        options += self.append_commands(
+            options, "--max-connection-per-server=", connection
+        )
+        options += self.append_commands(options, "--split=", split)
+        options += self.append_commands(options, "--http-proxy=", http_proxy_aria2c)
+        options += self.append_commands(options, "--https-proxy=", https_proxy_aria2c)
+        options += self.append_commands(options, "--save-session-interval=", save_session_interval)
+        options += self.append_commands(options, "--auto-save-interval=", auto_save_interval)
+        options += self.append_commands(options, "--force-save=", force_save)
+        options += self.append_commands(options, "--min-split-size=", min_split_size)
+        options += self.append_commands(options, "--max-tries=", max_tries)
+        options += self.append_commands(options, "--piece-length=", piece_length)
+        options += self.append_commands(options, "--summary-interval=", summary_interval)
+        options += self.append_commands(options, "--continue=", continue_aria2c)
+        options += self.append_commands(options, "--file-allocation=", file_allocation)
+        options += self.append_commands(options, "--disk-cache=", disk_cache)
 
         return options
 

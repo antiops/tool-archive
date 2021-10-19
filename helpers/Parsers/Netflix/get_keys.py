@@ -60,15 +60,15 @@ def __profiles(profile, addHEVCDO=False):
 			"hevc-main-L30-dash-cenc",
 			"hevc-main10-L30-dash-cenc",
 			"hevc-main10-L30-dash-cenc-prk",
-			"hevc-main-L31-dash-cenc"
+			"hevc-main-L31-dash-cenc",
 			"hevc-main10-L31-dash-cenc",
 			"hevc-main10-L31-dash-cenc-prk",
-			"hevc-main-L40-dash-cenc",				
+			"hevc-main-L40-dash-cenc",			
 			"hevc-main10-L40-dash-cenc",
-			"hevc-main10-L40-dash-cenc-prk",				
-			"hevc-main-L41-dash-cenc",				
+			"hevc-main10-L40-dash-cenc-prk",
+			"hevc-main-L41-dash-cenc",
 			"hevc-main10-L41-dash-cenc",
-			"hevc-main10-L41-dash-cenc-prk"
+			"hevc-main10-L41-dash-cenc-prk",
 		]
 		if addHEVCDO:
 			profiles += [
@@ -80,18 +80,16 @@ def __profiles(profile, addHEVCDO=False):
 
 	elif profile == 'HDR-10 KEYS':
 		profiles += [
-			"hevc-hdr-main10-L30-dash-cenc",
-			"hevc-hdr-main10-L30-dash-cenc-prk",
-			"hevc-hdr-main10-L31-dash-cenc",
-			"hevc-hdr-main10-L31-dash-cenc-prk",
-			"hevc-hdr-main10-L40-dash-cenc",
-			"hevc-hdr-main10-L41-dash-cenc",
-			"hevc-hdr-main10-L40-dash-cenc-prk",
-			"hevc-hdr-main10-L41-dash-cenc-prk"
+            'hevc-hdr-main10-L30-dash-cenc',
+            'hevc-hdr-main10-L30-dash-cenc-prk',
+            'hevc-hdr-main10-L31-dash-cenc',
+            'hevc-hdr-main10-L31-dash-cenc-prk',
+            'hevc-hdr-main10-L40-dash-cenc',
+            'hevc-hdr-main10-L40-dash-cenc-prk',
 		]	
 	else:
 		profiles += [
-			"playready-h264mpl30-dash",
+            "playready-h264mpl30-dash",
 		]
 
 	return profiles
