@@ -5,22 +5,17 @@
 pip install -r requirements.txt
 ```
 
-
 ## 参数
 ```
 基础参数：
-    -h，--help
-                显示完整参数设置帮助文档并退出
-    -q <数字>       
-                视频分辨率，默认选择最高（1080），可选：480，720，1080等
-    -o <目录路径>     
+    -h，--help  显示完整参数设置帮助文档并退出
+    -q <数字>   视频分辨率，默认选择最高（1080），可选：480，720，1080等
+    -o <目录路径>
                 下载临时文件夹
     -f <目录路径>
                 mkv混流输出文件夹，不指定默认输出到下载临时文件夹
-    -s <数字>
-                季数（Season）
-    -e <数字>
-                集数（Episode）不指定默认下载全集
+    -s <数字>   季数（Season）不指定默认下载所有季
+    -e <数字>   集数（Episode）不指定默认下载全集
                 "-e 1" 下载第1集;
                 "-e 1-7" 下载第1-7集;
                 "-e 2,5" 下载第2集、第5集
@@ -44,19 +39,14 @@ pip install -r requirements.txt
                 指定下载2.0声道音轨
     --aformat-51ch，--audio-format-51ch
                 指定下载5.1声道音轨
-    --keep
-                混流mkv后保留原始素材文件，默认删除
+    --keep      混流mkv后保留原始素材文件，默认删除
     -keys，--license
                 仅输出widevine key到控制台并退出
-    --no-aria2c
-                不调用aria2c下载器，使用Python下载器，默认使用aria2c
+    --no-aria2c 不调用aria2c下载器，使用Python下载器，默认使用aria2c
                 不推荐使用此参数
-    --nv
-                不下载视频（Video）
-    --na
-                不下载音频（Audio）
-    --ns
-                不下载字幕（Subtitle）
+    --nv        不下载视频（Video）
+    --na        不下载音频（Audio）
+    --ns        不下载字幕（Subtitle）
 
 额外配置文件参数（Manifest）：
     --main      指定 H.264 Main
