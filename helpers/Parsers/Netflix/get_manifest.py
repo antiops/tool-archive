@@ -409,21 +409,21 @@ class get_manifest:
 		if getHigh:
 			HighVideoList = self.HighVideoMSL()
 			if not HighVideoList == []:
-				# 判断main或high，要求：
-				# main和high的vamf不同时选择vamf更高者
-				# main和high的vamf相同时选择bitrate更高者
+				# 判断 main 或 high，要求：
+				# main 和 high 的 vmaf 不同时选择 vmaf 更高者
+				# main 和 high 的 vmaf 相同时选择 bitrate 更高者
 				if dict(VideoList[-1])["vmaf"]:
 					if int(dict(VideoList[-1])["vmaf"]) >= int(dict(HighVideoList[-1])["vmaf"]) and int(dict(VideoList[-1])["Bitrate"]) >= int(dict(HighVideoList[-1])["Bitrate"]):
 						check_high_or_main = "MAIN"
 					else: check_high_or_main = "HIGH"
-				# vamf=None时，通过码率判断
+				# vmaf = None 时，通过码率判断
 				elif dict(VideoList[-1])["Bitrate"]:
 					if int(dict(VideoList[-1])["Bitrate"]) >= int(dict(HighVideoList[-1])["Bitrate"]):
 						check_high_or_main = "MAIN"
 					else: check_high_or_main = "HIGH"
 				else: self.logger.info("There was something wrong with getting manifest!")
 				
-				checkerinfo = "\nNetflix Profile Checker v1.1\n2021-10-25 Jared_mod\n\nMain Rate: {}kbps | Vamf: {} | Profile: {}\nHigh Rate: {}kbps | Vamf: {} | Profile: {}\n\nResult: {} is Better!\n"
+				checkerinfo = "\nNetflix Profile Checker v1.1\n2021-10-25 Jared_mod\n\nMain Profile Rate: {}kbps | VMAF: {} | {}\nHigh Profile Rate: {}kbps | VMAF: {} | {}\n\nResult: {} is Better!\n"
 				checkerinfo = checkerinfo.format(
 					str(dict(VideoList[-1])["Bitrate"]),
 					str(dict(VideoList[-1])["vmaf"]),
@@ -436,7 +436,7 @@ class get_manifest:
 				self.logger.debug("HighVideoList: {}".format(HighVideoList))
 
 				if check_high_or_main == "MAIN":
-					# 合并main和high解析列表
+					# 合并 main 和 high 解析列表
 					VideoList += HighVideoList
 				elif check_high_or_main == "HIGH":
 					VideoList = HighVideoList
