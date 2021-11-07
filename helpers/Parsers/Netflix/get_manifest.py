@@ -332,7 +332,7 @@ class get_manifest:
 					else f"{size_in_bytes/1073741824:0.2f} GiB"
 				)
 				vid_url = downloadable["urls"][0]["url"]
-				L3 = 'L3' if 'SEGMENT_MAP_2KEY' in str(downloadable['tags']) else '' #
+				L3 = 'L3' if 'SEGMENT_MAP_2KEY' in str(downloadable['tags']) else ''
 
 				VideoList.append(
 					{
@@ -346,7 +346,7 @@ class get_manifest:
 						"Url": vid_url,
 						"Bitrate": str(downloadable["bitrate"]),
 						"Profile": downloadable["content_profile"],
-						"L3": L3 #
+						"L3": L3
 					}
 				)
 
@@ -408,41 +408,46 @@ class get_manifest:
 
 		if getHigh:
 			HighVideoList = self.HighVideoMSL()
+			# 变量赋值
 			if not HighVideoList == []:
-				# 判断 main 或 high，要求：
-				# main 和 high 的 vmaf 不同时选择 vmaf 更高者
-				# main 和 high 的 vmaf 相同时选择 bitrate 更高者
-				if dict(VideoList[-1])["vmaf"]:
-					if int(dict(VideoList[-1])["vmaf"]) >= int(dict(HighVideoList[-1])["vmaf"]) and int(dict(VideoList[-1])["Bitrate"]) >= int(dict(HighVideoList[-1])["Bitrate"]):
-						check_high_or_main = "MAIN"
-					else: check_high_or_main = "HIGH"
-				# vmaf = None 时，通过码率判断
-				elif dict(VideoList[-1])["Bitrate"]:
-					if int(dict(VideoList[-1])["Bitrate"]) >= int(dict(HighVideoList[-1])["Bitrate"]):
-						check_high_or_main = "MAIN"
-					else: check_high_or_main = "HIGH"
-				else: self.logger.info("There was something wrong with getting manifest!")
+				main_max = dict(VideoList[-1])
+				high_max = dict(HighVideoList[-1])
+			else:
+				self.logger.info("Error: Getting Manifest")
+				exit(-1)
+			# 判断 main 或 high，要求：
+			# main 和 high 的 vmaf 不同时选择 vmaf 更高者
+			# main 和 high 的 vmaf 相同时选择 bitrate 更高者
+			if main_max["vmaf"]:
+				if int(main_max["vmaf"]) >= int(high_max["vmaf"]) and int(main_max["Bitrate"]) >= int(high_max["Bitrate"]):
+					check_high_or_main = "MAIN"
+				else: 
+					check_high_or_main = "HIGH"
+			# vmaf = None 时，通过码率判断
+			elif main_max["Bitrate"]:
+				if int(main_max["Bitrate"]) >= int(high_max["Bitrate"]):
+					check_high_or_main = "MAIN"
+				else: 
+					check_high_or_main = "HIGH"
+			else: 
+				self.logger.info("Error: Getting Manifest")
+				exit(-1)
 				
-				checkerinfo = "\nNetflix Profile Checker v1.1\n2021-10-25 Jared_mod\n\nMain Profile Rate: {}kbps | VMAF: {} | {}\nHigh Profile Rate: {}kbps | VMAF: {} | {}\n\nResult: {} is Better!\n"
-				checkerinfo = checkerinfo.format(
-					str(dict(VideoList[-1])["Bitrate"]),
-					str(dict(VideoList[-1])["vmaf"]),
-					str(dict(VideoList[-1])["Profile"]),
-					str(dict(HighVideoList[-1])["Bitrate"]),
-					str(dict(HighVideoList[-1])["vmaf"]),
-					str(dict(HighVideoList[-1])["Profile"]),
-					check_high_or_main,
+			checkerinfo = "\nNetflix Profile Checker v1.1\n2021-11-07 Jared_mod\n\nMain Profile Rate: {}kbps | VMAF: {} | {}\nHigh Profile Rate: {}kbps | VMAF: {} | {}\nResult: {} is Better!\n".format(
+				str(main_max["Bitrate"]),
+				str(main_max["vmaf"]),
+				str(main_max["Profile"]),
+				str(high_max["Bitrate"]),
+				str(high_max["vmaf"]),
+				str(high_max["Profile"]),
+				check_high_or_main,
 				)
-				self.logger.debug("HighVideoList: {}".format(HighVideoList))
+			self.logger.debug("HighVideoList: {}".format(HighVideoList))
 
-				if check_high_or_main == "MAIN":
-					# 合并 main 和 high 解析列表
-					VideoList += HighVideoList
-				elif check_high_or_main == "HIGH":
-					VideoList = HighVideoList
+			if check_high_or_main == "HIGH":
+				VideoList = HighVideoList
 
 		VideoList = sorted(VideoList, key=lambda k: int(k["Bitrate"]))
-
 		return VideoList, checkerinfo
 
 	def ParseAudioSubs(self, resp):
