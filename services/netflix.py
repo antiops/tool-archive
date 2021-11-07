@@ -299,11 +299,11 @@ class netflix:
 
 	def downloadFile2(self, url, file_name):
 		with open(file_name, "wb") as f:
-			#避免ssl错误卡死，关闭requests模块ssl证书验证：verify=False
-			#关闭后，控制台持续输出警告，建议开启证书验证，取消注释下行代码可以屏蔽
-			#requests.packages.urllib3.diable_warnings()
+			# 避免ssl错误卡死，关闭requests模块ssl证书验证：verify=False
+			# 关闭后，控制台持续输出警告，建议开启证书验证，取消注释下行代码可以屏蔽
+			# requests.packages.urllib3.disable_warnings()
 			response = requests.get(url, stream=True, verify=False)
-			#response.encoding = 'UTF-8'
+			# response.encoding = 'UTF-8'
 			f.write(response.content)
 
 		return
