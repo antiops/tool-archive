@@ -16,7 +16,7 @@ tldextract
 unidecode
 yarl
 natsort
-titlecase==2.0.0
+titlecase
 prettytable
 termcolor
 pproxy
