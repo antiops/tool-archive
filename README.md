@@ -24,19 +24,7 @@
 - ⚡  BUY API ACCESS from 100$ Onwards :- wvfuck@cyberfiends.net ⚡ -
 
  NAP36 USAGE
-usage: nap36 [-h] [--url URL_SEASON] [--info] [--android] [--nv] [--na] [--ns] [--all-season] [-e EPISODESTART]
-             [-s SEASON] [-q CUSTOMQUALITY] [-o OUTPUT] [--keep] [--interactive] [--no-mux] [--force-check] [--mpl]
-             [--starmode] [--hpl] [--no-extras] [--no-ad] [--fix-atmos] [--no-sdh] [--only-extras]
-             [--force-mux FORCE_MUX] [--langtag LANGTAG] [--only-2ch-audio] [--custom-command CUSTOM_COMMAND]
-             [--fix-pitch [FPITCH ...]] [--source-fps SOURCEFPS] [--target-fps TARGETFPS] [--version [VERSION ...]]
-             [--alang [AUDIOLANG ...]] [--slang [SUBLANG ...]] [--flang [FORCEDLANG ...]] [--no-cleansubs]
-             [--title TITLECUSTOM] [--hevc] [--micro] [--private] [--debug] [--online-keys] [--only-keys]
-             [--only-keys-uhd] [--tlang TITLELANG] [--force-hd] [--force-uhd] [--no-dubcard] [--prerelease]
-             [--no-recap] [--cookies COOKIES_PATH] [--retry] [--cbr] [--cvbr] [--atmos] [--uhd] [--nc] [-r REGION]
-             [--clang CHAPTERSLANG] [--remote-api] [--remote] [--cvbr-audios] [--audio-dublang AUDIO_DUBLANG]
-             [--audio-volang AUDIO_VOLANG] [--subs-dublang SUBS_DUBLANG] [--subs-volang SUBS_VOLANG]
-             [--audio-eslang AUDIO_ESLANG] [--hdr] [--force-audiohq] [--hdrdv] [--aformat-2ch AFORMAT_2CH]
-             [--aformat-51ch AFORMAT_51CH] [--vp9] [--av1] [--np] [--nar] [--vpngate COUNTRY_CODE]
+usage: nap36 [-h] [--url URL_SEASON]
 
 optional arguments:
   -h, --help            show this help message and exit
