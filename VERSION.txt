@@ -1,0 +1,1194 @@
+10.1.0:
+	Cambios:
+		- Pocos x3
+
+10.0.1:
+	Cambios:
+		- Pocos x2
+		
+10.0.0:
+	Cambios:
+		- Pocos :v
+
+9.10.3:
+	Cambios:
+		- Arreglado un bug de la version anterior.
+	
+9.10.2:
+	Cambios:
+		- NETFLIX HA DEJADO DE FUNCIONAR PARA SIEMPRE HASTA NUEVO AVISO.
+		  Esto implica que ya no puedo conseguir nuevos keys y por tanto no se puede
+		  desencriptar ningun video sin tener las keys que he ido recopilando durante este
+		  tiempo, lo unico que nos queda es descargar los audios y subtitulos.
+	Nota:
+		- Evidentemente esto estaba mas que avisado, nada de estas herramientas es 
+		  eterno, asi que vuelvo a insistir, si quereis algo de Amazon/PrimeVideo, HBOES, 
+		  Disney+, etc, ahora es el momento de ir guardando las cosas, quizas no sea hoy
+		  quizas no sera este mes, pero tarde o temprano pasara lo mismo y los otros
+		  servicios tienen tambien los audios encriptados, asi que sera aun peor.
+
+9.10.1:
+	Cambios:
+		- Mejorada la interfaz para Disney+ para igualarla a la de las otras webs.
+		
+		- Añadida la opcion de --hevc para Disney+, evidentemente no esta disponible para 
+		  todas las series y peliculas, pero aquellas que tengan esa opcion os saldra un
+		  aviso de que existe el formato HEVC para esa serie/peli.
+		  Os recomiendo mucho este formato ya que la calidad es muy superior al AVC de 
+		  Disney+.
+		  Comparativa:
+			- AVC:
+					https://i.imgur.com/farFpJe.png
+					https://i.imgur.com/1lnkCGw.png
+			- HEVC:
+					https://i.imgur.com/QvONPjp.png
+					https://i.imgur.com/RKmwfHS.png
+
+	Nota:
+		- Se me olvido mencionar que la maxima calidad que se puede desencriptar en Disney+
+		  es el 720p, esto es porque Disney+ han protegido el 1080p de la misma forma que 
+		  Netflix o Amazon/PrimeVideo protege el 4K, por tanto solo aquellos capaces de
+		  desencriptar el 4K pueden desencriptar el 1080p de Disney+.
+
+9.10.0:
+	Cambios:
+		- Añadido Disney+ como opcion de descarga con la mayoria de comando funcionales:
+		  --no-video, --no-audio, --no-subs, --alang, --slang, --flang, y un largo etc.
+		  Aun me faltan algunas cosas por pulir pero ya tendria que funcionar todo sin problemas.
+		  Disney+ necesita una VPN (una que no haya bloqueado Disney) para iniciar sesion y 
+		  generar el token que durara 4h antes de caducar, mientras se tenga ese token se puede
+		  descargar sin necesidad de VPN, eso si, para navegar por la web tambien necesitaras VPN
+		  asi que lo suyo es guardarse el enlace de la web tambien.
+
+		- Se que Netflix tiene un bug que hace que falle a veces, en realidad hay 2 bugs,
+		  uno de ellos se soluciona borrando el archivo "cookies_nf.txt" de la carpeta
+		  cookies, estoy intentando solventar los 2 bugs pero mientras tanto id tirando de
+		  esta "solucion".
+
+9.9.2:
+	Cambios:
+		- Arreglado un bug de Netflix por un cambio en la web.
+
+9.9.1:
+	Cambios:
+		- Arreglado un bug de PrimeVideo por un cambio en la web.
+
+9.9.0:
+	Cambios:
+		- Añadido el comando "--cookies" para Amazon/PrimeVideo para indicar una ruta alternativa
+		  al txt de las cookies, si este comando no esta presente se usara la ruta por defecto.
+
+9.8.2:
+	Cambios:
+		- Eliminado un bug.
+
+9.8.1:
+	Cambios:
+		- Arreglado un bug de Amazon, no se podian descargar las peliculas.
+
+9.8:
+	Cambios:
+		- Arreglado HBO ES, fallaba debido a un cambio en la API.
+
+9.7:
+	Cambios:
+		- Arreglado el error de Netflix, estaba fallando porque Netflix ha cambiado su API.
+
+9.6.3:
+	Cambios:
+		- Arreglado un bug de Amazon/PrimeVideo que hacia que a veces encontrase el mismo idioma
+		  repetido 2 veces, uno en AAC y el otro en EAC3.
+
+9.6.2:
+	Cambios:
+		- Arreglado un bug de la anterior version.
+
+9.6.1:
+	Cambios:
+		- Arreglado un bug de la anterior version que hacia que el comando
+		  --private no mostrase la mejor calidad posible
+	
+9.6:
+	Cambios:
+		- Ahora tanto el license request como el manifest request de Netflix usan MSL v2, la version 2 de la API de Netflix,
+		  con esto habra muchos menos errores aleatorios de conexion y ademas al rehacer todo el codigo he separado
+		  el manifest del audio del video, para asi poder solucionar el problema de que el 
+		  Atmos no salia en su maxima calidad (768 kbps).
+
+9.5.15:
+	Cambios:
+		- Arreglado Amazon, fallaba por unos cambios en la web de Amazon.
+
+9.5.14:
+	Cambios:
+		- Arreglado PrimeVideo, fallaba por unos cambios en la web de PrimeVideo.
+
+9.5.13:
+	Cambios:
+		- Arreglado HBO ES.
+		
+	NOTA:
+		- El soporte para este conjunto de herramientas llega a su recta final, posiblemente
+		  es cuestion de dias a que deje de funcionar todo debido a que  Google (es dueño de Widevine)
+		  esta bloqueando todas las versiones antiguas de Widevine, asi que si quereis conservar 
+		  alguna serie o pelicula en especial hacedlo AHORA.
+9.5.12:
+	Cambios:
+		- Arreglado un bug de Amazon.
+		
+9.5.11:
+	Cambios:
+		- Arreglado Amazon, fallaba por unos cambios en la web de amazon.
+
+9.5.10:
+	Cambios:
+		- Arreglado un bug en PrimeVideo que hacia que detecase algunas peliculas como series
+		  causando un bucle infinito buscando los ASIN.
+
+9.5.9:
+	Cambios:
+		- Arreglado PrimeVideo, fallaba por unos cambios en la web de primevideo.com
+
+9.5.8:
+	Cambios:
+		- Arreglado un problema con los audios de "Audio Description"
+
+9.5.7:
+	Cambios:
+		- Arreglado varios problemas menores.
+
+9.5.6:
+	Cambios:
+		- Arreglado un bug de Amazon que hacia que el video maximo a descargar fuese en 
+		  720p pese a existir el 1080p.
+
+9.5.5:
+	Cambios:
+		- Arreglado un bug de la anterior version.
+
+9.5.4:
+	Cambios:
+		- Volvemos al comando "--online-keys", como su nombre indica, lo que hace
+		  es buscar las keys en un txt online que tengo alojado en un servidor,
+		  asi cuando estrenen nuevas series en Netflix ire añadiendo las keys en ese 
+		  txt online y no hara falta que vosotros las copieis en vuestro txt.
+		
+	NOTA:
+		- Usad "--online-keys" junto a "--private" para conseguir el mejor video en Netflix.
+		- Esto solo afecta a aquellas pelis/capitulos que usando --private no os desencripten
+		  el video H264, pero si descargais el HEVC/HDR no os hacen falta las keys y si
+		  aun usando el --private y descargando el H264 os desencriptan los capitulos es 
+		  que no necesitais keys adicionales.
+
+9.5.3:
+	Cambios:
+		- Arreglado Amazon, el mismo problema que arregle en PrimeVideo en la 9.5.1.
+
+9.5.2:
+	Cambios:
+		- Arreglado un problema con Netflix que pese a existir el 1080p en HPL (High profile) no lo permitia descargar.
+		  esto no soluciona el tema del bajo bitrate en HPL (que es aleatorio como he explicado hace nada).
+
+9.5.1:
+	Cambios:
+		- Arreglado Primevideo, estaba fallando por unos cambios que ha hecho Amazon en su web.
+
+9.5:
+	NOTA:
+		- COMO PARECE QUE NADIE SE ACUERDA, VOLVERE A COPIAR EL PROBLEMA CON EL CUAL VAMOS A TENER
+		  QUE VIVIR LOS PROXIMOS MESES MIENTRAS NO CONSIGA UNA SOLUCION:
+			- Hay episodios dentro de una misma serie que ahora no se pueden descargar
+			  en su maxima calidad y bitrate (que suele ser en Main Profile (MPL)), asi
+			  que hasta que consiga arreglarlo habra capitulos (de forma aleatoria) que 
+			  se descargaran en High Profile (HPL) que pese a parecer mejor tiene mucho menos
+			  bitrate (en general, a veces tiene mas bitrate que el Main Profile) y ademas de eso
+			  a veces incluso solo es posible desencriptar como maximo el video en 720p (raras veces).
+			  
+			  Asi que, en resumen, es posible descargar y desencriptar de Netflix pero ahora habra
+			  momentos donde no estaras descargando/desencriptando la mejor calidad existente.
+			  
+			  Por contra, esto no afecta al formato HEVC ni HDR, estos se pueden descargar ya
+			  desencriptar en 1080p y en su maximo bitrate sin problemas, como antes.
+
+	Cambios:
+		- Arreglado el problema que teniais con Netflix a la hora de desencriptar algunas series/pelis,
+		  ese que para arreglarlo de forma temporal dije de usar primero --only-keys, ahora ya no hace falta.
+
+9.4:
+	NOTA:
+		- Como podeis observar por los problemas continuos con Netflix/Primevideo/Amazon, 
+		  estas webs estan constantemente cambiando y mejorando su seguridad asi que como siempre
+		  os he dicho, todo esto tiene fecha de caducidad, solo que nadie sabe cuando pasara, pero pasara
+		  por tanto si necesitais guardar algo hacedlo hoy, no mañana.
+
+	Cambios:
+		- Arreglado un problema con PrimeVideo.
+		- Ahora Netflix vuelve a ser como antes, ya no puedo conseguir las KEYS de la mejor
+		  calidad en MPL/HPL (main/high profile), asi que no hace falta que me pidais las keys
+		  para Netflix.
+		- Ahora para descargar de Netflix/HBO/Primevideo/Amazon ya no hace falta usar el comando
+		  "--private" ni el comando "--online-keys" para las nuevas series, las viejas aun se podra hacer
+		  si en su momento guarde las KEYS online (porque me las pedisteis).
+		- Si por curiosidad quereis saber si existe una mejor calidad en Netflix de la que os da el NAP
+		 (el NAP os mostrara la mejor calidad desencriptable), usad el comando "--private" para verla
+		 pero tened en cuenta que usando el comando --private y al no tener ya las KEYS para desencriptarlo
+		 no lo podreis usar para nada.
+
+9.3.4:
+	Cambios:
+		- Arreglado un problema con los titulos que tenian caracteres asiaticos.
+
+9.3.3:
+	Cambios:
+		- Arreglado Primevideo.
+		- Arreglados varios errores de la version anterior.
+
+9.3.2:
+	Cambios:
+		- Arreglados varios errores de la version anterior.
+
+9.3.1:
+	Cambios:
+		- Arreglados varios errores de la version anterior.
+
+9.3:
+	Cambios:
+		- Solucionado un problema cuando en Amazon/PrimeVideo habia 2 temporadas o mas
+		  con el mismo numero (ejemplo: https://www.amazon.co.uk/gp/video/detail/B078M2PZCS),
+		  cuando esto pase la tool cambiara la numeracion añadiendole un "0x" al final, ejemplo:
+		  Si hay dos temporadas 3 pasarian a ser 301 y 302.
+		
+		- Arreglados varios errores de la version anterior.
+
+9.2:
+	NOTAS:
+		- Netflix ha bloqueado las viejas versiones de Widevine, por lo tanto la tool
+		  no funcionara mas sin las KEYS que yo os proporciono (con --online-keys), por
+		  suerte yo sigo pudiendo buscar esas KEYS.
+		
+	Cambios:		
+		- Arreglados varios errores de la version anterior.
+		
+		- Añadida la posibilidad de descargar de http://www.blim.com, funciona el modo temporada
+		  y casi todas las opciones que ya son habiutales en NAP.
+
+9.1.2:
+	Cambios:
+		- Arreglado el modo --no-video en Amazon/PrimeVideo, antes no buscaba las keys con el comando
+		  --private.
+		
+		- Arreglados varios errores de la version anterior.
+
+9.1.1:
+	Cambios:
+		- Arreglados varios errores de la version anterior.
+
+9.1:
+	Cambios:
+		- Arreglado un problema que hacia que, al usar algunas cookies de Primevideo, fallase.
+		
+		- Arreglados varios errores de la version anterior.
+
+9.0.1:
+	Cambios:
+		- Arreglados varios errores de la version anterior.
+		
+		- Para usar el nuevo metodo de Amazon/PrimeVideo y tambien para HBO España necesitais
+		  seguir usando el comando --private, solo ese.
+
+
+9.0:
+	Cambios:
+		- Arreglados varios errores de la version anterior.
+		
+		- Ahora podreis descargar de Amazon/PrimeVideo en HD sin pedirme las keys ni usar
+		  --online-keys.
+		
+		- Por ahora Netflix no ha cambiado, si veo que con Amazon/PrimeVideo va todo bien
+		  y no se filtra la tool de nuevo me pensare en hacer lo mismo para Netflix.
+
+8.9.1:
+	Cambios:
+		- Arreglados varios errores de la version anterior.
+
+8.9:
+	Cambios:
+		- Arreglados varios errores de la version anterior.
+		
+		- Añadida la posibilidad de descargar los extras de Amazon/PrimeVideo, es decir, los trailers
+		  y demas videos que normalmente tendria numeracion 0, si una temporada o capitulo es 0 en la web de
+		  Amazon/PrimeVideo, para poderla descargar con la Tool hay que empezar a contar a partir del capitulo/temporada
+		  mas grande, por ejemplo, si existe un extra de Making off y la temporada tiene 12 capitulos, para descargar el Making off
+		  hay que seleccionar el numero 13 (-e 13), y si es una temporada 0 con extras y en total hay 3 temporadas
+		  la temporada 0 de extras sera la 4 (-s 4), si hay mas de un 0 sera la siguiente, es decir, 5, y asi 
+		  sucesivamente.
+		  - Ejemplos practicos:
+			- Doctor Who de Amazon DE: https://www.amazon.de/gp/video/detail/B00IGKZGSM
+			- The Tick: https://www.primevideo.com/region/na/detail/0H39IJF8ZG3CT38AZ8L94PVWWU
+		
+		- Por ahora no se pueden descargar los trailers de las peliculas pero en futuras versiones se podra.
+		
+		- Añadido un aviso de cuando hay Chapters disponibles para descargar en Amazon/PrimeVideo.
+		
+		- Desde hace unas versiones, internamente el codigo ha sido reescrito en casi su totalidad para Amazon/PrimeVideo.
+
+8.8:
+	Cambios:
+		- Implementado el comando -s para Amazon/PrimeVideo, ahora se use la url de la temporada
+		  que sea, analizara el codigo html para buscar el resto de url del resto de temporadas
+		  y te pedira el numero de temporada que quieres descargar 
+		  (a no ser que hayas usado el comando -s X, donde X es el numero de la temporada a descargar).
+
+8.7:
+	Cambios:
+		- Arreglados varios errores de la version anterior.
+		
+		- Mejorado el sistema de Amazon/PrimeVideo, ahora descarga los 2 mpd (video y audio)
+		  en el mismo proceso para asi poder mostrar la lista de calidades correctamente.
+
+8.6.4:
+	Cambios:
+		- Arreglado el problema que hacia que a veces HBO no encontrase los subtitulos.
+
+8.6.3:
+	Cambios:
+		- Arreglados varios errores de la version anterior.
+
+8.6.2:
+	Cambios:
+		- Ahora muestra correctamente el tamaño del archivo antes de descargarlo,
+		  en Amazon/PrimeVideo.
+
+8.6.1:
+	Cambios:
+		- Arreglados varios errores de la version anterior.
+
+8.6:
+	Cambios:
+		- Mejorada la interfaz de Amazon/PrimeVideo, ahora muestra una lista de
+		  los audios para descargar y tambien muestra mas detalles de la calidad del video.
+		
+		- Ahora Amazon/PrimeVideo y HBO España tambien usan el comando --no-prompt.
+		
+		- Corregido un bug de Netflix que hacia que en ciertas ocasiones no se desencriptase
+		  el video.
+
+8.5.2:
+	Cambios:
+		- Mejoras varias.
+
+8.5.1:
+	Cambios:
+		- Corregido un problema con el --cbr en el modo temporada de la version anterior.
+		- Ahora HBO España funcionara con el usuario y la contraseña de la cuenta,
+		  asi no necesitaremos guardar las cookies y tampoco se bloqueara la sesion
+		  en el navegador web.
+
+8.5:
+	Cambios:
+		- Mejorado el comando --cbr para Amazon/PrimeVideo, ahora cuando uses este comando
+		  automaticamente descargara solo el video y acto seguido descargara el MPD de cuando
+		  no usas el comando --cbr (el de toda la vida) para asi conseguir los audios de buena calidad
+		  ya que como sabeis, el comando --cbr tiene audios de mucha menos calidad.
+		  Es todo completamente automatico.
+		  - Nota: Ahora los mkv creados al usar el comando --cbr no tendran la etiqueta
+				  "[CBR]" en el nombre.
+
+		- Varias mejoras mas.
+
+8.4.3:
+	Cambios:
+		- Arreglado un problema con --online-keys para Amazon/PrimeVideo que tenia la version anterior.
+
+8.4.2:
+	Cambios:
+		- Arreglado un problema con --online-keys para Netflix que tenia la version anterior.
+
+8.4.1:
+	Cambios:
+		- Arreglados varios problemas de la anterior version, ahora todo tendria que ir bien.
+
+8.4:
+	Cambios:
+		- Añadido el comando "--online-keys", como su nombre indica, lo que hace
+		  es buscar las keys en un txt online que tengo alojado en un servidor,
+		  asi cuando estrenen nuevas series en Netflix/Primevideo ire añadiendo
+		  las keys en ese txt online y no hara falta que vosotros las copieis en
+		  vuestro txt.
+
+8.3:
+	Cambios:
+		- Arreglados varios problemas de la anterior version, ahora todo tendria que ir bien.
+
+8.2:
+	Cambios:
+		- Detector automatico de la region, el comando --region se eliminara para siempre.
+		  ACLARACION: La region no depende de tu IP o situacion geografica, 
+		  sino desde la region donde la creaste y factura tus pagos.
+
+		  - Notas sobre este cambio:
+			- Las cookies para cada web de Amazon siguen teniendo un txt para cada region (UK, JP, DE y US):
+				- Japon: cookies_jp.txt
+				- USA: cookies_us.txt
+				- Reino Unido: cookies_uk.txt
+				- Alemania: cookies_de.txt
+			
+			- Para Primevideo ahora todas las regiones usaran el mismo txt: 
+			  Europa (incluye India), Japon, resto del mundo:
+				- cookies_ps.txt
+			- Por tanto si un usuario tiene dos cuentas de primevideo y quiere usar ambas
+			  no podra, solo podra usar una a la vez, la que guarde sus cookies en el .txt.
+		
+		- Tambien se han anulado los comandos --asin, --mode y --ID.
+
+8.1:
+	Cambios:
+		- Arreglado el modo temporada/url de Amazon (UK, JP, DE, US).
+
+8.0:
+	NOTAS:
+		- Actualiza NAP_Base_EXE_CommonFiles.7z.
+
+	Cambios:
+		- Arreglado HBO España.
+		
+		- Recuperado el viejo sistema de KEYS para las 3 webs (HBO España, Netflix
+		  Amazon/PrimeVideo) en los 3 .txt siguientes:
+			- KEYS_AMAZON_PRIMEVIDEO.txt
+			- KEYS_HBO_ES.txt
+			- KEYS_NETFLIX.txt
+		
+		- Gracias al sistema de KEYS ahora podremos desencriptar el video HD en 
+		  Amazon/PrimeVideo y los videos en Main/High de mayor bitrate en Netflix,
+		  esto se activara gracias al comando "--private". Al poner ese comando
+		  se activaran funciones especiales para poder descargar el video antes mencionado
+		  y solo se podra desencriptar si ademas de usar el comando --private
+		  tenemos las KEYS en el TXT.
+		
+		- Las KEYS os las proporcionare yo directamente, simplemente pedidlas por
+		  los chats donde ya tenemos comunicacion.
+		  
+		- Sin las KEYS, por ahora, HBO seguira funcionando de forma normal, tambien
+		  funcionara Amazon/PrimeVideo en SD y Netflix con el video en High 
+		  de menor bitrate de forma aleatoria como estos ultimos meses.
+		  Es decir, si no estan las KEYS en el txt usara el sistema del Decrypter
+		  con licencia.
+
+7.9:
+	Cambios:
+		- Amazon/PrimeVideo ha hecho un cambio en sus servidores, con lo cual
+		  ahora ya no se puede desencriptar el video/audio como antes, aun asi
+		  se ha conseguido una solucion, el problema de la solucion es que
+		  solo permite desencriptar el video en SD como maximo pero por suerte
+		  los audios 5.1 se pueden seguir desencriptando, por tanto ahora cualquier
+		  serie o pelicula la  descargara como maximo en 576p (no hace falta usar el
+		  comando -q, simplemente descargara lo maximo que se puede desencriptar).
+		
+		- Añadido el comando "--force-mux", sirve para aunque se use el comando
+		  --no-video haga el mux igual, ademas de eso el comando admite la variable
+		  de la calidad, esto servira para por ejemplo descargar el video de
+		  algun tracker privado en 1080p, poner el video en mp4 y el nombre correcto
+		  en la carpeta de Descargas, y usar la Tool para descargar los audios y 
+		  subtitulos junto al comando --no-video y --force-mux 1080, con esto
+		  lo que hara es descargar los audios y subs y al final hacer el mux con el
+		  video en 1080p (sin el comando haria el mux con el video en SD como maximo).
+
+7.8:
+	Cambios:
+		- Arreglado Primevideo, fallaba por culpa de los cambios en la web.
+
+7.7.4:
+	Cambios:
+		- Arreglado un bug que afectaba a las series que tenian tildes en HBO.
+
+7.7.3:
+	Cambios:
+		- Arreglado otro bug de HBO.
+
+
+7.7.2:
+	Cambios:
+		- Arreglado otro bug de HBO.
+
+
+7.7.1:
+	Cambios:
+		- Arreglados un par de bugs de HBO (cuando usabas el comando -e xx
+		  fallaba si x era mayor o igual a 10, a parte tambien fallaban un par
+		  mas de cosas.
+
+
+7.7:
+	NOTAS:
+		- Actualiza NAP_Base_EXE_CommonFiles.7z.
+		
+		- Bugs conocidos de HBO España:
+			- Aunque la VO no sea en ingles HBO España lo tiene como "ingles"
+			  en su web y a causa de eso la Tool detectara el idioma como si fuera
+			  realmente ingles y asi lo muxeara al mkv final. Este bug se soluciona
+			  con los siguientes comandos:
+				--audio-dublang -> Siempre sustituira el idioma del audio que en HBO consta como "es"
+				--subs-dublang -> Siempre sustituira el idioma de los subs que en HBO constan como "es"
+				--audio-volang -> Siempre sustituira el idioma del audio VO que en HBO consta como "en" 
+				--subs-volang -> Siempre sustituira el idioma de los subs VO que en HBO constan como "en"
+				^^Todos estos comandos afectan al --slang y --alang
+			  
+			- Si pones PLAY en la web mientras se esta usando el script puede
+			  causar problemas hasta el punto de que no te deje hacer nada hasta
+			  que no cierres la sesion y el navegador web, te vuelvas a conectar
+			  y vuelvas a generar las cookies para el script.
+			  
+		- Si encontrais algun problema avisadme de inmediato para ver si es
+		  algun bug que se pueda corregir, pensad que es la primera version.
+
+		- Como usar HBO España:
+			- Basta con ejecutar NAP36 y cuando te pida la URL poner una URL
+			  de HBO España, ya sea de una pelicula (https://es.hboespana.com/movies/predators/3b1f95c-00f91f4b2a5)
+			  o una temporada de una serie (https://es.hboespana.com/series/manifest/a03ace71-4d21-4a2c-8257-e44a72104628/season-1/ee33cab0-b0e7-49b9-9ab4-088e1528ebd0),
+			  es decir, NO funcionara si usamos la URL de la serie directamente (https://es.hboespana.com/series/manifest/a03ace71-4d21-4a2c-8257-e44a72104628)
+			  
+			- Tiene los comandos habituales disponibles:
+				--no-video, --no-audio, --no-subs, --all-season, -e, -q,
+				--output, --keep , --no-mux, --langtag (por defecto es en castellano),
+				--only-2ch-audio, --alang, --slang (no tiene subtitulos forzados)
+
+	Cambios:
+		- Arreglado algunos bugs con la funcion de vpngate.
+		
+		- Arreglados otros bugs menores de Amazon/PrimeVideo y Netflix.
+		
+		- Añadido el comando "--cbr", sirve para forzar el modo CBR (bitrate
+          constante), en ocasiones tiene mas calidad que la opcion por 
+		  defecto (VCBR, bitrate variable). Puede tener peor calidad de audio.
+
+		- Añadido soporte para HBO España, su funcionamiento es igual
+		  que con Primevideo, es decir, los idiomas son tipo "es" o "en"
+		  y la forma de loguearse es con las cookies generadas con la extension
+		  de chrome de siempre.
+		
+		- Netflix ha hecho otro cambio para peor, ahora no es posible desencriptar
+		  algunos titulos en HEVC HD o HDR, solo permite en HEVC SD, en proximas versiones
+		  pondre un filtro que detectar automaticamente este problema para que cuando
+		  se use el comando --hevc descargue como maximo la maxima calidad
+		  desencriptable, igual que hace ya con el high/main.
+
+
+7.6.3:
+	NOTAS:
+		- Actualiza NAP_Base_EXE_CommonFiles.7z.
+
+	Cambios:
+		- Arreglado un bug con la funcion de vpngate.
+		- Encontrado otro bug sin resolver, cuando usas el comando --vpngate se 
+		  bloquea el CMD y no deja poner y/n en Netflix por tanto hay que poner siempre
+		  el comando --no-prompt.
+
+7.6.2:
+	NOTAS:
+		- Actualiza NAP_Base_EXE_CommonFiles.zip.
+
+	Cambios:
+		- Arreglado un bug con la funcion de vpngate.
+		- Encontrado otro bug sin resolver, cuando usas el comando --vpngate se 
+		  bloquea el CMD y no deja poner y/n en Netflix por tanto hay que poner siempre
+		  el comando --no-prompt.
+
+7.6.1:
+	Cambios:
+		- Mejorado la funcion de vpngate, ahora se desconecta de la VPN una vez 
+		  termina la descarga (capitulo/temporada/pelicula).
+
+7.6:
+	NOTAS:
+		- Actualiza NAP_Base_EXE_CommonFiles.zip.
+		- Necesitas instalar OpenVPN: https://swupdate.openvpn.org/community/releases/openvpn-install-2.4.6-I602.exe
+		  Y posiblemente reiniciar el PC.
+
+	Cambios:
+		- He arreglado un bug de Amazon/PrimeVideo cuando el audio era en AAC.
+		- He añadido el comando "--vpngate" para usar vpngate (http://www.vpngate.net/en/)
+		  con el codigo del pais. Ejemplo: --vpngate us
+	
+7.5.1:
+	Cambios:
+		- He arreglado un bug de Amazon y PrimeVideo que hacia que no descargase el .mpd.
+
+7.5:
+	NOTAS:
+		- Actualiza la carpeta "\binaries" y NAP_Base_EXE_CommonFiles.7z.
+		- Es posible que haya algun BUG, si es asi, informadme y vere que ocurre.
+
+	Cambios:
+		- Netflix vuelve a estar operativo, pero con un problema que persistira 
+		  un buen tiempo hasta que o encuentre una solucion o Netflix vuelva a cambiarlo:
+			- Hay episodios dentro de una misma serie que ahora no se pueden descargar
+			  en su maxima calidad y bitrate (que suele ser en Main Profile (MPL)), asi
+			  que hasta que consiga arreglarlo habra capitulos (de forma aleatoria) que 
+			  se descargaran en High Profile (HPL) que pese a parecer mejor tiene mucho menos
+			  bitrate (en general, a veces tiene mas bitrate que el Main Profile) y ademas de eso
+			  a veces incluso solo es posible desencriptar como maximo el video en 720p (raras veces).
+			  
+			  Asi que, en resumen, es posible descargar y desencriptar de Netflix pero ahora habra
+			  momentos donde no estaras descargando/desencriptando la mejor calidad existente.
+			  
+			  Por contra, esto no afecta al formato HEVC ni HDR, estos se pueden descargar ya
+			  desencriptar en 1080p y en su maximo bitrate sin problemas, como antes.
+
+		- El desencriptador ha sido renovado, basicamente para mejorar su seguridad, ahora funciona
+		  con unos ID unicos, este ID se genera a partir del Hardware que tengas en tu PC, es posible
+		  que si  cambias algun componente de tu PC el ID cambie, si es asi, genera uno nuevo y avisame
+		  anulare el viejo y te dare acceso con el nuevo ID. Estos ID son unicos, asi que si se filtra 
+		  de nuevo la Tool sabre rapidamente quien ha sido y se atendera a las consecuencias.
+		
+		- Otros cambios que sinceramente no recuerdo pero que eran para bien xDDD.
+
+7.4:
+	Cambios:
+		- Arreglado un problema de Netflix que hacia que algunas veces no se desencriptase
+		  el video.
+
+7.3.1:
+	Cambios:
+		- Arreglados un error que me deje en la anterior version, no borraba los archivos
+		  originales una vez desencriptados y eso daba problema al muxear.
+
+7.3:
+	Cambios:
+		- Arreglados por fin todos los problemas que habia con los videos en SD.
+		
+		- Los audios en 640 kbps vuelven a funcionar (sin necesidad de ningun comando especial)
+		  para las nuevas cuentas llamadas "Ultra", segun parece es una prueba que hacen aleatoria
+		  asi que puede ser que dependiendo del momento, navegador web o dispositivo en el que os 
+		  creeis la nueva cuenta no este disponible esta nueva calidad, ejemplo: 
+		  https://i.imgur.com/OdExjEr.png
+
+7.2:
+	Cambios:
+		- Arreglado un problema de la anterior version, las series de Netflix que solo tenian
+		  SD no se desencriptaban, ahora ya deberia de estar todo bien.
+
+7.1:
+	Cambios:
+		- Arreglado el problema de Netflix, se supone que todo tendria que ir todo como antes,
+		  si veis que alguna cosa falla avisadme.
+
+7.0:
+	Cambios:
+		- Arreglados varios problemas de la anterior version, ahora todo tendria que ir bien.
+
+6.9:
+	Cambios:
+		- Vuelta todo a la normalidad, ahora ya funciona todo como antes, 
+		  salvo el audio a 640 kbps que sigue sin funcionar.
+
+6.8.1:
+	Cambios:
+		- Arreglado un error que daba con las peliculas de Netflix.
+
+6.8:
+	Cambios:
+		- Arreglado Netflix, en teoria todo tendria que funcionar como antes, aunque 
+		  he anulado un par de opciones:
+			- He anulado el comando --ID, ahora SIEMPRE sera necesario poner un link de Netflix, por ejemplo:
+		      https://www.netflix.com/title/80135414
+			
+			- He anulado la posibilidad de descargar los trailers, en futuras versiones lo volvere a añadir.
+			
+			- He dejado el comando --force-audiohq pero posiblemente ya no funcionara nunca mas debido
+			  a los cambios de los servidores de Netflix.
+		- Si encontrais algun problema en alguna serie o pelicula avisadme ya que podria darse el caso de que la solucion
+		  que he implementado hoy falle en algun caso puntual.
+
+6.7.1:
+	Cambios:
+		- Arreglados varios problemas de la anterior version, ahora todo tendria que ir bien.
+
+6.7:
+	Cambios:
+		- He cambiado el desencriptador para Netflix y Amazon/PrimeVideo por uno mejor.
+		  En teoria con esto tambien soluciono algunos problemas que tenia antes Amazon/PrimeVideo
+		  con las VPN (avisadme si aun sigue fallando). Eso si, ahora el comando "--only-keys"
+		  de Netflix ya no funciona ya que ahora ya no se necesitan la KEYS para funcionar con 
+		  este nuevo desencriptador.
+		
+		- He cambiado una cosa del archivo .cfg de Netflix asi que la primera vez te pedira
+		  de nuevo los datos de tu cuenta (usuario y contraseña), ahora el resto de datos
+		  no hace falta introducirlos, simplemente pulsad ENTER y se configurara el valor
+		  por defecto.
+		
+		- Arreglados otros problemas.
+
+6.6:
+	Cambios:
+		- Añadido el comando --force-audiohq, basicamente lo que hace es crear un bucle
+		  para forzar la busqueda del audio de 640 kbps (en titulos en 5.1), lo he dejado
+		  como comando optativo porque es algo mas lento a la hora de iniciar la busqueda
+		  de los audios y porque puede dar errores por demasiadas solicitudes de golpe.
+		
+		- Arreglados otros problemas.
+
+6.5:
+	Cambios:
+		- Añadido los comandos --hdr y --hevc para Netflix, su maxima calidad es 1080p, segun
+		  parece tienen muy buena calidad (aunque aun no lo he comparado en muchas series).
+		  Por lo que parece no todos los titulos tienen el formato HEVC, solo los 
+		  que tienen HDR o 4K.
+
+		- Arreglados otros problemas.
+
+6.4.2:
+	Cambios:
+		- Netflix ha hecho algun cambio en relacion a los audios en 5.1 a 640 kbps,
+		  aun no tengo claro si este cambio se puede resolver a nivel de script o si
+		  tiene que ver con la cuenta (antiguedad de la cuenta, pais de creacion, configuracion...).
+		  Lo unico que se es que este cambio ha afectado solo en algunas cuentas, en cambio en 
+		  otras deja obtener el audio de 640 kbps sin problemas.
+		  Sea como sea, lo que he hecho es un arreglo temporal, y es que si no encuentra (por lo ya explicado)
+		  el audio de 640 kbps descargara el de 384 kbps en AC3, como era antes de que existiera el nuevo audio.
+
+		- Arreglados otros problemas.
+
+6.4.1:
+	Cambios:
+		- Arreglado un problema a la hora de encontrar los ASIN en PrimeVideo debido a un cambio
+		  en el codigo fuente de la web de primevideo.
+
+6.4:
+	Cambios:
+		- Anulado el comando --cookies, ahora siempre usara las cookies (como en anteriores versiones),
+		  el motivo de anular esto es porque el uso del correo y contraseña para hacer login al cabo
+		  de unas cuantas conexiones hace que Amazon bloquee la conexion y pida un codigo de verificacion,
+		  para evitar esto directamente he anulado el poder usar el usuario y contraseña y se vuelve al sistema
+		  anterior de cookies.
+		
+		- Varias mejoras en el muxer de primevideo (habia algunos idiomas "nuevos" que no los detectaba y no le hacia mux.
+		
+		- Arreglados otros problemas.
+
+6.3.3:
+	Cambios:
+		- Arreglado un fallo en el muxer en relacion a los subtitulos.
+		
+		- Otras mejoras.
+
+6.3.2:
+	Cambios:
+		- Arreglado otro fallo de Amazon/PrimeVideo que daba error al seleccionar la calidad.
+		
+	NOTA:
+		Actualiza tambien "NAP_Base_EXE_CommonFiles.7z"
+
+6.3.1:
+	Cambios:
+		- Arreglado un bug que hacia que diese error al descargar de Amazon/PrimeVideo.
+		
+	NOTA:
+		Actualiza tambien "NAP_Base_EXE_CommonFiles.7z"
+
+6.3:
+	Cambios:
+		- Fusionados primevideo36 y netflix36 en una sola app llamada nap36, al hacer esta
+		  fusion he homogeneizado muchos de los comandos para que sean iguales por tanto 
+		  habra algun comando que cambiara, revisa las "Instrucciones.txt".
+		
+		- Dependiendo de si la URL es de Netflix o de Amazon/PrimeVideo usara un modo 
+		  u otro de forma automatica.
+		
+		- Arreglado el --only-keys de Netflix ya que daba un error y no hacia el modo temporada.
+		
+		- Otras mejoras varias.
+		
+	NOTA:
+		Actualiza tambien "NAP_Base_EXE_CommonFiles.7z"
+	
+	NOTA 2:
+		Borra netflix36.exe y primevideo36.exe, a partir de ahora quedaran desfasadas y no
+		se actualizaran mas.
+		
+6.2.1:
+	Cambios:
+		- Arreglados algunos fallos.
+
+6.2:
+	Cambios:
+		- Ahora tanto Amazon como PrimeVideo funcionan solo con el correo y la contraseña
+		  que te pedira la primera vez que lo uses y se creara un .cfg con estos datos.
+		
+		- Si quieres seguir usando las cookies en .txt como hasta ahora puedes hacerlo usando 
+		  el comando "--cookies", si lo usas se ignorara el correo y la contraseña del .cfg.
+		  Esto es util por si quieres compartir con alguien las cookies sin tener que compartir
+		  tu correo y contraseña. En este caso podeis poner un correo y contraseña falsos en el cfg.
+
+		- Añadido el comando "--hevc" para Amazon/PrimeVideo, con este comando podreis descargar
+		  y desencriptar el video en formato HEVC (H265) hasta un maximo de 1080p (NO sirve para el 4K).
+		  Cabe mencionar que este formato tiene bastante menos bitrate y que segun mis comparativas tiene menor
+		  calidad que el video en formato H264 de Amazon/PrimeVideo, pero es una opcion mas para el que la
+		  quiera usar.
+		  
+6.1:
+	Cambios:
+		- Arreglado un problema al descargar de Amazon USA (por un error en el CDN).
+
+6.0:
+	Cambios:
+		- Arreglado un bug del desencriptador de Amazon/PrimeVideo.
+
+5.9.3:
+	Cambios:
+		- Arreglado un problema al descargar de Amazon Japan (por un error en el CDN).
+		  Si otras regiones fallan avisadme e intentare comprobar el CDN correcto, siempre
+		  que tenga acceso a esa region.
+
+5.9.2:
+	Cambios:
+		- Mejorado el desencriptado de Amazon/PrimeVideo, ahora es mas eficiente.
+		
+		- Otras mejoras varias.
+
+5.9.1:
+	Cambios:
+		- Arreglados algunos fallos.
+
+5.9:
+	Cambios:		
+		- Arreglados dos importantes problemas que arrastraba desde hacia tiempo en Primevideo:
+			- Ahora cuando solo existe un audio ya no es siempre "en" por defecto, ahora sale 
+			  el idioma correctamente.
+			- Ahora cuando introduces una calidad de video que no existe te muestra una lista 
+			  de las calidades disponibles y te deja introducir una que si sea correcta para seguir con la descarga.
+		
+		- Ademas de eso he arreglado otros pequeños problemas y he hecho otras mejoras menores.
+
+5.8:
+	Cambios:
+		- Anulado el archivo "amazon_primevideo.cfg", ya no sirve para nada, ahora las cookies
+		  las carga mediante un txt situado en la carpeta /cookies/, la primera vez que lo useis
+		  os saldran las instrucciones para generar ese archivo txt con las cookies y como tiene que 
+		  nombrarse ese txt dependiendo de la region, simplemente seguid las instrucciones en pantalla.
+		
+		- Arreglado un problema para detectar el ASIN de las peliculas de PrimeVideo.
+
+5.7:
+	Cambios:
+		- Añadido el comando "--aformat-51ch" en netflix, se usa como --aformat-51ch NombreDelFormato.
+		  Ejemplo: --aformat-51ch ac3
+          Los formatos disponibles son aac (192 kbps), ac3 (384 kbps), eac3 (640 kbps) y atmos (448 kbps).
+
+5.6.1:
+	Cambios:
+		Arreglados algunos fallos.
+
+5.6:
+	Cambios:
+		- Anulado el comando "--decode-video" de Amazon/PrimeVideo ya que ahora no es necesario, si no encuentra
+		  las KEYS en el txt directamente hara el WEB-DL del video y del audio.
+	
+	AVISO:
+		Sobra decir que visto lo seguro que es Amazon esto no sera eterno,
+		aprovechad la oportunidad mientras se pueda.	
+	NOTA:
+		Actualiza tambien "NAP_Base_EXE_CommonFiles.7z"
+	NOTA 2:
+		Este nuevo metodo solo funciona en Sistemas Operativos (Windows) de 64 bits.
+
+5.5:
+	Cambios:
+		- Solucionado un error que hacia que no usara las KEYS del .txt en Amazon/PrimeVideo en
+		  caso de tenerlas.
+	NOTA:
+		- He revisado algunos audios desencriptados con las KEYS y con el nuevo metodo y 
+		  tienen el mismo CRC, por tanto teoricamente es igual de bueno el neuvo metodo como las KEYS
+		  para los audios.
+		  
+5.4.1:
+	Cambios:
+		- Mejorado el decodificador de video en Amazon/PrimeVideo (recordad que no es un desencriptador,
+		  solo genera un archivo .RAW de muchos Gb que luego hay que encodear.
+	NOTA:
+		Actualiza tambien "NAP_Base_EXE_CommonFiles.7z"
+
+5.4:
+	Cambios:
+		- Arreglado un problema con el nuevo desencriptador de Amazon/PrimeVideo, cuando el
+		  titulo de la serie tenia tildes daba errores, ahora ya no los dara.
+
+5.3:
+	Cambios:
+		- Añadido el comando --decode-video, este comando lo que hace es decodificar el video
+		  en formato RAW (muchisimos Gb de tamaño), esto no creara un WEB-DL y el RAW se tiene que
+		  encodear.
+	NOTA:
+		Actualiza tambien "NAP_Base_EXE_CommonFiles.7z"
+
+5.2.1:
+	Cambios:
+		- Arreglado un problema que hacia que se borrase <\i> que indica el final de la italica
+		  en los subtitulos, ahora ya no se borra.
+
+5.2:
+	Cambios:
+		- Mejorado el desencriptador de los audios de Amazon/PrimeVideo.
+	NOTA:
+		Actualiza tambien "NAP_Base_EXE_CommonFiles.7z"
+
+5.1:
+	Cambios:
+		- Ahora desencripta el audio de Amazon/PrimeVideo, repito, SOLO el audio.
+		  Aun asi este nuevo metodo es peor que con las KEYS asi que si teneis las keys usadlas,
+		  por defecto primero buscara las keys en el txt y si no las encuentra usara este nuevo metodo.
+	NOTA:
+		Actualiza tambien "NAP_Base_EXE_CommonFiles.7z"
+
+5.0.1:
+	Cambios:
+		- Arreglado un error en el codigo, perdon por las molestias.
+5.0:
+	Cambios:
+		- Corregidos un error importante, actualiza.
+
+4.9.2:
+	Cambios:
+		- Corregidos algunos errores.
+		- Añadido filipino al muxer de Netflix
+
+4.9.1:
+	Cambios:
+		- Corregidos algunos errores.
+
+4.9:
+	Cambios:
+		- Cambiado el sistema de Netflix, ahora funciona con la ID de la serie/pelicula,
+		  ya no hace falta buscar nunca mas el ID de una temporada en concreto, ademas ahora
+		  el numero de temporada que introducimos en el comando "-s" ya siempre sera el mismo
+		  que el que muestra netflix en el menu de la serie.
+		- Junto al cambio anterior se ha añadido otro comando, "--all-season", si este 
+		  comando esta activo entonces descargara toda la temporada indicada y empezara por el
+		  capitulo indicado en el comando "-e", ejemplo: --all-season -s 1 -e 1
+		  Si por error se usa este comando con una pelicula o trailer simplemente lo descargara de forma normal.
+		  Ademas, si en vez de poner el ID de la serie ponemos el que antes de usaba, el
+		  que sale al reproducir un capitulo, lo que hara el script es iniciar a partir de ese capitulo y temporada,
+		  sin preguntarte a que temporada o capitulo pertenece.
+		- Corregidos algunos errores.
+
+4.8:
+	Cambios:
+		- Corregidos algunos errores.
+
+4.7:
+	Cambios:
+		- Corregidos algunos errores.
+		- Añadido el perfil de audio de EAC3 a 640 kbps para el 5.1 de Netflix.
+
+4.6:
+	Cambios:
+		- Corregidos algunos errores.
+		- Cambiado el formato de los archivos de configuracion, te pedira los datos
+		  automaticamente la primera vez que lo uses.
+
+4.5:
+	Cambios:
+		- A partir de ahora estara compilada en .exe y ya no dependera de tener instalado Python.
+		- Ahora el formato de audio atmos esta activado por defecto, para no usarlo esta el nuevo comando: "--no-atmos-audio"
+		- Añadido el comando "--video-high", sirve para activar el perfil high para el video (no todas las series ni todas las resoluciones tienen este perfil),
+		  NO recomiendo el uso de este perfil ya que por ahora el bitrate es muy bajo.
+  
+4.4:
+	Cambios:
+		- Añadido Filmin (aun tiene muy pocas opciones, pero funciona).
+		- Ahora la configuracion va en los archivos .cfg de la raiz.
+		- Otros arreglos.
+
+4.3.2
+	Cambios:
+		- Arreglado otro problema del muxer, esta vez era uno que hacia que la audio descripcion se pusiera como audio  
+		  principal en caso de no existir el audio de ese mismo idioma sin audio descripcion.
+
+4.3
+	Cambios:
+		- Arreglado un problema del muxer que hacia que el audio de la VO saliera 2 veces.
+		- Ahora ya no hace falta poner " [Original]" en la VO.
+
+4.2
+	Cambios:
+		- Varios errores arreglados, en el muxer sobretodo. Por ejemplo antes si no habia subs forzados el SDH o el Completo pasaba a ser Por defecto, ahora ya no.
+		- El muxer ahora es aun mas simple, solo hay 1 lista: ["European Spanish", "euSpa", "spa", "Castellano", "yes", "yes"]
+		  Es lo mismo de antes pero ahora el segundo valor es el nombre del archivo del sub, y el ultimo "no" es la opcion para los subs forzados, si estan o no por defecto.
+		- Remodelado tambien el muxer para Primevideo/Amazon, recordad que para que funcione el desencriptador de esta web hay que tener las KEYS.
+
+4.1
+	Cambios:
+		- Añadido el comando "--only-keys" para Netflix, sirve para simplemente mostrar las KEYS y guardarlas en el .txt, funciona con el modo temporada tambien.
+
+4.0
+	Cambios:
+		- Corregido el problema de Netflix, ya vuelve a funcionar. 
+		  NOTA: El archivo de configuracion de Netflix ha sido cambiado, configuralo de 0.
+		- Eliminado el comando "--local-keys" de Primevideo/Amazon, ahora por defecto buscara las keys en .txt sin indicarselo.
+		- Ahora se crea una copia de seguridad de cada KEY que usemos en Netflix en el archivo \KEYS\KEYS_NETFLIX.txt,
+		  esto lo he hecho por si en un futuro falla para siempre tener las KEYS que hayamos usado guardadas.
+		- El Muxer de Netflix (en la proxima version tambien lo hare con el de Primevideo/Amazon) ha sido remodelado por completo.
+		  Ahora es muchisimo mas sencillo de modificar, existen 2 listas que podemos editar a nuestro gusto: AudioLanguageList y SubsLanguageList.
+		  El orden en el MKV viene determinado por el orden que cada idioma este en estas listas, los elementos de cada idioma son los siguientes:
+		  Ejemplo: ["European Spanish", "spa", "Castellano", "yes"], el primero es el nombre que tiene el archivo, no hay que modificarlo, 
+		  el segundo es el codigo de idioma para mkvmerge, tampoco hay que modificarlo, por ultimo tenemos el titulo del audio/sub que aparecera en el MKV
+		  y una opcion de "yes" o "no" para indicar que sea el audio/sub "por defecto" (solo un idioma puede estar activado por defecto).
+		  Mas abajo tenemos estos elementos:
+		  '--track-name', '0:' + audio_language_name + ' (Audiodescripción)'
+		  '--track-name', '0:' + subs_language_name + ' [Forzados]'
+		  '0:' + subs_language_name + ' [Completos]'
+		  '0:' + subs_language_name + ' [Para sordos]'
+		  Todos estos elementos tambien son editables (la ultima parte), creo que se explican por si solos.
+
+3.9
+	Cambios:
+		- Corregido un error en Netflix debido a un reciente cambio en la web, ahora el audio VO tiene la etiqueta
+		  "[Original]" y el muxer automatico no lo reconocia, ahora ya lo reconoce y hace el mkv automaticamente como siempre.
+
+3.8
+	Cambios:
+		- Añadido el comando "--fpitch" que sirve para corregir el tono de los audios que deseemos, se complementa con
+		  "--source-fps" y "--target-fps", explicare que hace con un ejemplo: --fpitch es it --source-fps 23.976 --target-fps 25
+		  Este ejemplo lo que haria es corregir el tono (sin alterar la duracion) de los idiomas "es" e "it",
+		  donde el tono actual seria a 23,976 fps y el tono al que lo pasaremos seria a 25 fps.
+		  El comando esta tanto para netflix como para primevideo/amazon.
+		  PD: Necesitas Avisynth (recomiendo la version 2.6)
+
+3.7
+	Cambios:
+		- Las series y pelis con una "," en el nombre daban problemas, arreglado.
+
+3.6.5.2
+	Cambios:
+		- Arreglados varios problemas.
+
+3.6.5
+	Cambios:
+		- Arreglados varios problemas.
+
+3.6.4
+	Cambios:
+		- Amazon/PrimeVideo ha dejado de funcionar, he añadido una funcion temporal hasta que se arregle el problema:
+		  "--local-keys", sirve para buscar las posibles KEYS de desencriptacion en este .txt: \KEYS\KEYS_AMAZON_PRIMEVIDEO.txt
+		  Para obtener las KEYS para esta funcion se necesita algo a lo que yo personalmente no tengo acceso, asi que no me pregunteis
+		  como hacerlo funcionar, pero si coneceis a alguien que puede obtener las KEYS y os las pueden pasar, ponedlas en ese txt.
+		- Tambien hay que volver a cambiar el "amazonprimevideo.py" de la carpeta \pywidevine\clientsconfig ya que he cambiado su estructura principal  
+		- Corregidos errores de Netflix.
+
+3.6.3
+	Cambios:
+		- Corregidos errores provocados por los caracteres no soportados por windows (*, {}, etc)
+
+3.6.2
+	Cambios:
+		- Varios errores corregidos.
+
+3.6
+	Cambios:
+	- Añadido soporte para caracteres asiaticos, ahora transforma los Kanji a Romanji para que no de ningun error.
+	- Varios errores corregidos.
+
+3.5
+	Cambios:
+		- Cambiados los archivos de configuracion, ahora estan aqui "\pywidevine\clientsconfig" con nombres mas claros.
+		- Añadido el comando "--aformat-2ch", sirve para configurar el formato del audio 2.0: aac o eac3, si no se especifica usara eac3
+		- Varios errores corregidos.
+
+3.4
+	Cambios:
+		- Varios errores corregidos.
+
+3.3.2
+	Cambios:
+		- Solucionado un problema con los subtitulos de Amazon.
+
+3.3
+	Cambios:
+		- Varios errores corregidos.
+
+3.2.2
+	Cambios:
+		- He arreglado algunos fallos que habia en los Amazon extranjeros, por tanto si no descargais de ahi no os afecta.
+
+3.2.1
+	Cambios:
+		- Arreglados un par de fallos que se ma habian pasado en la anterior version.
+
+3.2
+	Cambios:
+		- Añadido el comando "--only-2ch-audio", sirve para limitar el audio para que solo descargue en 2.0 canales 
+		  (en su maxima calidad dentro de todos los 2.0 disponibles)
+		- Mas mejoras y arreglos.
+
+3.1
+	Cambios:
+		- Añadido el formato de audio Atmos (5.1 EAC3 a 448 kbps), como es un formato poco compatible es opcional,
+		  hay que activarlo con el comando: --atmos-audio
+		- Ahora descarga los subtitulos normales y para sordos en caso de existir, tanto en primevideo como en netflix.
+		- Ahora todo lo que ya este descargado no se volvera a descargar a no ser que se borre manualmente de la carpeta de descargas,
+		  esto sirve por ejemplo para hacer una primera descarga con el comando --no-mux, editar manualmente algun archivo ya
+		  finalmente volver a ejecutar el .bat sin el comando --no-mux para que haga el mux con los archivos editados.
+		  Una vez hecho el mux y a no ser que se use el comando --keep los archivos si seran borrados.
+		- Mas mejoras y arreglos.
+
+3.0
+	Cambios:
+		- Mas mejoras y arreglos.
+
+2.9.2
+	Cambios:
+		- Arreglados algunos fallos.
+
+2.9
+	Cambios:
+		- Varias mejoras menores.
+		- Cambiado el muxer de .bat a .py.
+
+2.8
+	Cambios:
+		- Nueva funcion para descargar, ahora da mas informacion (velocidad, tiempo estimado...) y va mejor en general.
+		- "Modo temporada" y "no mas asin" para Amazon.
+		- Otras mejoras adicionales al script de Primevideo.
+
+2.7
+	Cambios:
+		- Mas arreglos.
+		- Añadida la opcion de elegir el idioma de los titulos y los chapters en Primevideo.
+
+2.6.2
+	Cambios:
+		- Arreglado un pequeño error que hacia que no se guardasen los subs en el modo temporada en Netflix.
+
+2.6
+	Cambios:
+		- Arreglado un bug cuando usabas una cuenta no europea de Primevideo.
+		- Remodelado el metodo de obtener las KEYS.
+
+2.5.2
+	Cambios:
+		- Corregido un error, causado por un despiste, en el script Primevideo.
+
+2.5
+	Cambios:
+		- Arreglados varios problemas.
+
+2.4
+	Cambios:
+		- Añadidas 2 nuevas funciones a primevideo:
+			* "Modo temporada", permite descargar toda una temporada de forma automatica empezando por el capitulo deseado.
+			* "No mas asin", a partir de ahora no es necesario buscar el asin, simplemente se necesita el url de la serie/peli.
+
+2.3
+	Cambios:
+		- Script de Netflix convertido de Python 2.7 a 3.6, ahora ya no es necesario depender de la version 2.7.
+
+2.2
+	Cambios:
+		- Solucionado el bug causado por el cambio de Netflix a la hora de entregar el manifest.
+
+2.1
+	Cambios:
+		- Solucionado varios errores, el mas grave: Primevideo no funcionaba si tenias una cuenta "no europea".
+
+2.0
+	Cambios:
+		- Posibilidad de descargar todos los idiomas de primevideo de golpe, tanto audios como subs y hacer el mkv automaticamente.

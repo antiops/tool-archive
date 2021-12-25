@@ -1,0 +1,182 @@
+1 - Descomprimir el pack en una carpeta donde la ruta no tenga espacios ni tildes.
+
+2 - Copia tu "licence.txt" PERSONAL y UNICA en la carpeta: "\binaries\wvDecrypter"
+
+3 - Configurar las cuentas en estos archivos (opcional):
+	\filmin.cfg
+
+4 - En la primera ejecucion te pedira de introducir los datos de Netflix, 
+	HBO España o Amazon, dependiendo del modo que uses.
+
+5 - OPCIONAL:
+	Copiar alguno de los .bat de ejemplo de la carpeta "\Ejemplos de BAT" a la carpeta 
+	raiz del pack.
+
+	
+*NOTAS:
+	- Si quieres obtener las cookies para Amazon/Primevideo usa esta extension en la web de primevideo.com o amazon:
+		Nombres del txt para cada region:
+		- Japon: cookies_jp.txt
+		- USA: cookies_us.txt
+		- Reino Unido: cookies_uk.txt
+		- Alemania: cookies_de.txt
+		- Primevideo: cookies_ps.txt
+	https://chrome.google.com/webstore/detail/cookiestxt/njabckikapfpffapmjgojcnbfjonfjfg
+
+	- En caso de querer descargar mas de un idioma hay que separarlos por espacios, y si el idioma tiene mas de una palabra hay que usar comillas.
+	Por ejemplo, --alang "European Spanish" English, descargaria el audio en castellano e ingles.
+	
+	- Los idiomas en Netflix son por ejemplo asi: "European Spanish", English, Spanish
+	  En cambio en Amazon/Primevideo son asi: es, en, es-la
+	  Pero los idiomas de los subtitulos forzados en Netflix son con codigos de letras
+	  tambien: euSpa, eng, spa
+	
+	- Puedes usar el nombre del idioma de Netflix y Amazon a la vez para que el mismo .bat
+	  sirva para las dos webs dependiendo de la url que introduzcas.
+
+
+*Opciones comunes:
+--online-keys -> Busca las KEYS en un .txt online alojado en un servidor.
+--private -> Activa funciones especiales (HD y Main), solo si tienes las KEYS en el TXT.
+--url -> Para introducir la URL de Netflix, Amazon o Primevideo (con https://), la URL debe ir entre comillas.
+		 Dependiendo de si la URL es de Netflix o de Amazon/PrimeVideo usara un modo u otro de forma automatica.
+--no-video -> Para que no descargue el video, si esta activo no creara el MKV al final.
+--no-audio -> Para que no descargue ningun audio, si esta activo no creara el MKV al final.
+--no-subs -> Para que no descargue ningun subtitulo.
+--all-season -> Modo temporada, para descarga toda la temporada.
+-e -> Para indicar en que capitulo empezar a descargar.
+-s -> Para indicar que temporada descargar.
+-q -> Para indicar la calidad a descargar. Ejemplo: -q 720
+--output -> Para indicar la ruta donde descargar los archivos.
+--keep -> Para que despues de hacer el mkv NO borre los archivos originales.
+--no-mux -> Para que despues de descargar los archivos no los junte todos en un MKV.
+--langtag -> Para indicar el idioma de las etiquetas del mkv, hay 2 opciones: Spanish o English, por defecto usa English. Ejemplo: --langtag English
+--only-2ch-audio -> Para limitar el audio a solo 2.0 (descargando la maxima calidad disponible dentro de los 2.0).
+--alang -> Para configurar que audios descargar, si no se usa el comando, descargara todos los idiomas disponibles.
+--slang -> Para configurar que subtitulos descargar, si no se usa el comando, descargara todos los idiomas disponibles.
+--flang -> Para configurar que subtitulos forzados descargar, si no se usa el comando, descargara todos los idiomas disponibles.
+--no-cleansubs -> Para que no elimine algunas etiquetas de los subtitulos como {\an8}, por defecto lo borra.
+--fpitch, sirve para corregir el tono de los audios que deseemos, 
+	se complementa con "--source-fps" y "--target-fps", explicare que hace con un ejemplo:
+	--fpitch "European Spanish" Italian --source-fps 23.976 --target-fps 25
+	Este ejemplo lo que haria es corregir el tono (sin alterar la duracion) de los idiomas 
+	"European Spanish" e "Italian", donde el tono actual seria a 23,976 fps y el tono al que 
+	lo pasaremos seria a 25 fps. Necesitas Avisynth (recomiendo la version 2.6).
+--title -> Para personalizar el titulo de la descarga, util cuando el nombre original contiene caracteres japoneses o simbolos extraños que puedan generar errores.
+--hevc -> Para descargar el video en formato HEVC (1080p maximo).
+--vpngate -> Para usar vpngate (http://www.vpngate.net/en/) con el codigo del pais. 
+			 Necesitas instalar https://swupdate.openvpn.org/community/releases/openvpn-install-2.4.6-I602.exe
+			 Y posiblemente reiniciar el PC.
+			 Ejemplo: --vpngate us
+
+
+*OPCIONES de Amazon/Primevideo
+--retry -> Para reintentar en un bucle infinito la busqueda del manifest (mpd) hasta encontrarlo.
+--atmos -> Para descargar el audio en atmos, por ahora inutil ya que no se puede desencriptar.
+--no-chapters -> Para que no descargue los chapters.
+--cbr -> Para forzar el modo CBR (bitrate constante), en ocasiones tiene mas calidad que la opcion por defecto (VCBR, bitrate variable).
+--force-mux -> Sirve para aunque se use el comando --no-video haga el mux igual, 
+			   ademas de eso el comando admite la variable de la calidad, esto 
+			   servira para por ejemplo descargar el video de algun tracker privado 
+			   en 1080p, poner el video en mp4 y el nombre correcto en la carpeta 
+			   de Descargas, y usar la Tool para descargar los audios y subtitulos 
+			   junto al comando --no-video y --force-mux 1080, con esto lo que hara 
+			   es descargar los audios y subs y al final hacer el mux con el video 
+			   en 1080p (sin el comando haria el mux con el video en SD como maximo).
+
+*OPCIONES de HBO
+--audio-dublang -> Siempre substituira el idioma del audio que en HBO consta como "es"
+--subs-dublang -> Siempre substituira el idioma de los subs que en HBO constan como "es"
+--audio-volang -> Siempre substituira el idioma del audio VO que en HBO consta como "en" 
+--subs-volang -> Siempre substituira el idioma de los subs VO que en HBO constan como "en"
+^^Todos estos comandos afectan al --slang y --alan
+
+
+*OPCIONES de NETFLIX:
+--hdr -> Para descargar el video en formato HDR (1080p maximo).
+--aformat-2ch -> Para configurar el formato del audio 2.0: Los formatos disponibles son aac (96 kbps) o eac3 (128 kbps), si no se especifica usara eac3. Ejemplo: --aformat-2ch aac
+--aformat-51ch -> Para configurar el formato del audio 5.1. Los formatos disponibles son aac (192 kbps), ac3 (384 kbps), eac3 (640 kbps) y atmos (448 kbps), si no se especifica usara eac3.. Ejemplo: Ejemplo: --aformat-51ch ac3
+--no-prompt -> Para que no pida confirmacion para empezar a descargar, muy util cuando descargas una temporada entera.
+--no-all-regions -> Para que no descargue los idiomas ocultos en las series originales de Netflix.
+
+
+
+
+
+
+*Ejemplos de idiomas en Amazon/Primevideo:
+European Spanish: es
+Spanish: es-la
+Catalan: cat
+Basque: eu
+English: en
+English SDH subs: en-sdh
+French: fr
+French (Belgium): fr-bg
+French (Luxembourg): fr-lu
+French (Canada): fr-ca
+German: de
+Italian: it
+Portuguese: pt
+Brazilian Portuguese: pt-br
+Polish: pl
+Turkish: tr
+Armenian: hy
+Swedish: sv
+Danish: da
+Finnish: fi
+Dutch: nl
+Dutch (Belgium)(Flemish): nl-be
+Norwegian: no
+Latvian: lv
+Icelandic: is
+Russian: ru
+Belarusian: ru-by
+Ukrainian: uk
+Hungarian: hu
+Bulgarian: bg
+Croatian: hr
+Lithuanian: lt
+Estonian: et
+Greek: el: gre	
+Hebrew: he
+Arabic: ar
+Persian: fa
+Romanian: ro
+Serbian: sr
+Czech: cs
+Slovak: sk
+Slovenian: sl
+Albanian: sq
+Bosnian: bs
+Macedonian: mk
+Hindi: hi
+Bengali: bn
+Urdu: ur
+Punjabi: pa
+Tamil: ta
+Telugu: te
+Marathi: mr
+Kannada (India): kn
+Gujarati: gu
+Malayalam: ml
+Sinhala: si
+Assamese: as
+Manipuri: mni
+Tagalog: tl
+Indonesian: id
+Malay: ms
+Vietnamese: vi
+Thai: th
+Khmer: km
+Korean: ko
+Mandarin: zh
+Simplified Chinese: zh-hans, zh-hk, zh
+Traditional Chinese: zh-hant, zh-tw, zh
+Chinese: zh
+Cantonese: yue
+Japanese: ja
+Audio description : lang-descriptive. Ejemplo: en-descriptive
+	
+	
+	
