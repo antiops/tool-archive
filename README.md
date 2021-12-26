@@ -35,7 +35,7 @@
 - 👯 Sharing is caring
   
 
-- ⚡ AMZN DSNP & all sites working CDM IS available BUY IT from wvfuck@cyberfiends.net ⚡ 
+- ⚡ AMZN DSNP & all sites working CDM buy from wvfuck@cyberfiends.net ⚡ 
 
   
 <br>
