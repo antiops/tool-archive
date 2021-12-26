@@ -2,11 +2,14 @@
  <div size='20px'> LenovoTB-X505X-L1 CDM
 </div>
 
+
  <div size='20px'> Working L1 CDM FOR NETFLIX & ALL SITES |AMZN-DSNP-Blocked|
 </div>
 
+
  <div size='20px'>  Note This CDM Will Burn in 2-3 Days So Use as much u can..
 </div>
+
 
  <div size='20px'> ESN FOR NETFLIX |NFANDROID1-PRV-P-GOOGLEPIXEL=4=XL-12995-6EA8A15D39427309D0A97686A1A315C6A0ABFE46BECD14BB740EC56C65168E72| 
 </div>
